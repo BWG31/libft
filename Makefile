@@ -6,7 +6,7 @@
 #    By: bgolding <bgolding@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/24 11:39:18 by bgolding          #+#    #+#              #
-#    Updated: 2023/12/08 14:50:26 by bgolding         ###   ########.fr        #
+#    Updated: 2023/12/08 16:17:07 by bgolding         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -68,18 +68,23 @@ OBJS	=	$(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_F)))
 CC		=	gcc
 CFLAGS	=	-Wall -Wextra -Werror
 RM		=	rm -f
-AR		=	ar -r
+AR		=	ar -rc
+
+DEF_COLOR		=	\033[0;39m
+GREEN			=	\033[0;92m
+YELLOW			=	\033[0;93m
 
 all:		$(NAME)
 
-$(NAME):	$(OBJS)
-			$(AR) $@ $^
+$(NAME):	$(OBJ_DIR) $(OBJS)
+			@$(AR) $@ $(OBJS)
+			@echo "$(GREEN)libft compiled! $(DEF_COLOR)"
 
 $(OBJ_DIR)%.o:		$(SRC_DIR)%.c | $(OBJ_DIR)
-					$(CC) $(CFLAGS) -c $< -o $@
+					@$(CC) $(CFLAGS) -c $< -o $@
 
 $(OBJ_DIR):
-			mkdir -p $@
+			@mkdir -p $@
 
 clean:
 			$(RM) -rf $(OBJ_DIR)
