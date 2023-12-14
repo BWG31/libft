@@ -16,7 +16,7 @@
 	The memory of 'next' must not be freed.
 */
 
-#include "../inc/libft.h"
+#include "libft.h"
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {

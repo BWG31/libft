@@ -15,7 +15,7 @@
 	specified in 'set' removed from the beginning and the end of the string.
 */
 
-#include "../inc/libft.h"
+#include "libft.h"
 
 static int	in_set(char c, char const *set);
 

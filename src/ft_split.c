@@ -16,7 +16,7 @@
 	The array must end with a NULL pointer.
 */
 
-#include "../inc/libft.h"
+#include "libft.h"
 
 static int	string_count(char const *s, char c);
 static int	next_strlen(const char *s, char c);

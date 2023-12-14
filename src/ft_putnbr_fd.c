@@ -14,7 +14,7 @@
 	Outputs the integer 'n' to the given file descriptor.
 */
 
-#include "../inc/libft.h"
+#include "libft.h"
 
 void	ft_putnbr_fd(int n, int fd)
 {

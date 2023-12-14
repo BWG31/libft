@@ -15,7 +15,7 @@
 	on the content of each node.
 */
 
-#include "../inc/libft.h"
+#include "libft.h"
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {

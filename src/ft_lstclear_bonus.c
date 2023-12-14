@@ -16,7 +16,7 @@
 	list must be set to NULL.
 */
 
-#include "../inc/libft.h"
+#include "libft.h"
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {

@@ -14,7 +14,7 @@ NAME	=	libft.a
 
 SRC_DIR	=	src/
 OBJ_DIR	=	obj/
-INC		=	inc/
+INC_DIR	=	inc/
 SRC_F	=	ft_isalpha \
 			ft_isdigit \
 			ft_isalnum \
@@ -71,19 +71,20 @@ RM		=	rm -f
 AR		=	ar -rc
 
 DEF_COLOR		=	\033[0;39m
-GREEN			=	\033[0;92m
-YELLOW			=	\033[0;93m
+GREEN			=	\033[1;32m
+YELLOW			=	\033[1;33m
 
 all:		$(NAME)
 
 $(NAME):	$(OBJ_DIR) $(OBJS)
 			@$(AR) $@ $(OBJS)
-			@echo "$(GREEN)libft compiled! $(DEF_COLOR)"
+			@echo "$(GREEN)$(NAME) successfully compiled!$(DEF_COLOR)"
 
 $(OBJ_DIR)%.o:		$(SRC_DIR)%.c | $(OBJ_DIR)
-					@$(CC) $(CFLAGS) -c $< -o $@
+					@$(CC) $(CFLAGS) -I$(INC_DIR) -c $< -o $@
 
 $(OBJ_DIR):
+			@echo "$(YELLOW)Compiling libft...$(DEF_COLOR)"
 			@mkdir -p $@
 
 clean:

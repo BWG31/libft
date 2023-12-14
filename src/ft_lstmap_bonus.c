@@ -17,7 +17,7 @@
 	The 'del' function is used to delete the content of a node if needed.
 */
 
-#include "../inc/libft.h"
+#include "libft.h"
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
